@@ -52,12 +52,20 @@ const reducer = (state = initialState, action) => {
     case "ADDUSER":
       return {
         ...state,
-        userList: [...state.users, action.payload],
+        userList: [...state.userList, action.payload],
       };
     case "WATCHUSER":
       return {
         ...state,
         userList: action.payload,
+      };
+    case "DELETE":
+      return {
+        users: [...state.users.filter((user) => user !== action.payload)],
+      };
+    case "DELETEUSER":
+      return {
+        userList: [...state.userList.filter((user) => user !== action.payload)],
       };
     default:
       return state;

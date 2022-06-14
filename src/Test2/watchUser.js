@@ -29,6 +29,7 @@ function UserList() {
         type: "WATCHUSER",
         payload: {},
       });
+    setFlag(true)
     } else {
       alert("Invalid email or password!!");
     }
